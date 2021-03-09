@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link href="/webjars/bootstrap/4.1.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    /*#table:hover{*/
+    /*    box-shadow: black 2px 2px;*/
+    /*}*/
+</style>
+<body onload="getAll()" style="background-color: #eaeaea" class="container text-center d-flex justify-content-center mb-5">
+
+
+<div class="row text-center d-flex justify-content-center">
+
+    <p class="col-12 mt-5">Emailingizga bir martalik havola yuboriladi!</p>
+    <div class="col-12 text-center d-flex justify-content-center">
+
+        <div class="row d-flex justify-content-center text-center">
+            <input required placeholder="firstname" class="col-12 form-control input-group w-75" name="firstname" id="firstname">
+            <input required placeholder="lastname" class="col-12 form-control input-group w-75" name="lastname" id="lastname">
+            <input required placeholder="email" class="col-12 form-control input-group w-75" type="email" id="email" name="email">
+            <div id="root" class="">
+                <button id="button" type="submit" onclick="mailSender()" class="col-12 btn btn-success">Yuborish</button>
+            </div>
+        </div>
+
+    </div>
+
+    <h2 class="col-12 mt-2">Ro'yhatdan o'tgan talabalar:</h2>
+    <table id="table" class="text-center d-flex justify-content-center">
+        <tr class="text-center d-flex justify-content-center">
+            <th>full name</th>
+            <th>email</th>
+        </tr>
+    </table>
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script th:inline="javascript" th:src="@{/js/js.js}"></script>
+
+</html>
